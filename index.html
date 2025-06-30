@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectroFinder RD - Mockup Interactivo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">ElectroFinder RD</div>
+      <div class="search-bar-header">
+        <input
+          type="text"
+          id="main-search-input"
+          placeholder="Buscar electrodomésticos o tiendas..."
+        />
+        <button id="main-search-button"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="user-icons">
+        <i class="fas fa-user-circle"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <aside class="filter-panel">
+        <h2><i class="fas fa-filter"></i> Filtros de Búsqueda</h2>
+
+        <div class="filter-group">
+          <h3>Tipo de Electrodoméstico</h3>
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox type-filter"
+              value="Nevera"
+            />
+            Neveras</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox type-filter"
+              value="Televisor"
+            />
+            Televisores</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox type-filter"
+              value="Estufa"
+            />
+            Estufas</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox type-filter"
+              value="Lavadora"
+            />
+            Lavadoras</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox type-filter"
+              value="Aire Acondicionado"
+            />
+            Aires Acondicionados</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h3>Ubicación</h3>
+          <input
+            type="text"
+            id="location-text-input"
+            placeholder="Ej: Santo Domingo"
+          />
+          <select id="province-select">
+            <option value="">Todas las Provincias</option>
+            <option value="Santo Domingo">Santo Domingo</option>
+            <option value="Santiago">Santiago</option>
+            <option value="Punta Cana">Punta Cana</option>
+          </select>
+          <label
+            ><input type="checkbox" id="current-location-checkbox" /> Usar mi
+            ubicación actual</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h3>Rango de Precios (DOP)</h3>
+          <div class="price-range">
+            <input
+              type="number"
+              id="min-price-input"
+              placeholder="Min"
+              value="0"
+            />
+            -
+            <input
+              type="number"
+              id="max-price-input"
+              placeholder="Max"
+              value="999999"
+            />
+          </div>
+          <label
+            ><input
+              type="radio"
+              name="price-range-preset"
+              class="price-preset-radio"
+              value="0-15000"
+            />
+            Menos de $15,000</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="price-range-preset"
+              class="price-preset-radio"
+              value="15000-30000"
+            />
+            $15,000 - $30,000</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="price-range-preset"
+              class="price-preset-radio"
+              value="30000-inf"
+            />
+            Más de $30,000</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h3>Marca</h3>
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox brand-filter"
+              value="Samsung"
+            />
+            Samsung</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox brand-filter"
+              value="LG"
+            />
+            LG</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox brand-filter"
+              value="Mabe"
+            />
+            Mabe</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox brand-filter"
+              value="General Electric"
+            />
+            General Electric</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              class="filter-checkbox brand-filter"
+              value="Whirlpool"
+            />
+            Whirlpool</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h3>Valoración</h3>
+          <label
+            ><input
+              type="radio"
+              name="rating-filter"
+              class="rating-filter"
+              value="4"
+            />
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="far fa-star"></i> (4 estrellas o más)</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="rating-filter"
+              class="rating-filter"
+              value="3"
+            />
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="far fa-star"></i
+            ><i class="far fa-star"></i> (3 estrellas o más)</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="rating-filter"
+              class="rating-filter"
+              value="0"
+              checked
+            />
+            Todas</label
+          >
+        </div>
+
+        <div class="filter-group">
+          <h3>Disponibilidad</h3>
+          <label><input type="checkbox" id="in-stock-filter" /> En Stock</label>
+        </div>
+
+        <div class="filter-group">
+          <h3>Promociones</h3>
+          <label
+            ><input type="checkbox" id="promotion-filter" /> Con
+            descuentos</label
+          >
+        </div>
+
+        <button class="apply-filters-btn" id="apply-filters-button">
+          Aplicar Filtros
+        </button>
+      </aside>
+
+      <main class="results-area">
+        <div class="results-header">
+          <h2 id="results-title">Tiendas de Electrodomésticos</h2>
+          <div class="sort-by">
+            <span>Ordenar por:</span>
+            <select id="sort-select">
+              <option value="relevance">Más Relevante</option>
+              <option value="rating">Mejor Valorada</option>
+              <option value="distance">Distancia</option>
+              <option value="atoz">A-Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="store-grid" id="store-grid"></div>
+        <p
+          id="no-results-message"
+          style="
+            display: none;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+          "
+        >
+          No se encontraron tiendas que coincidan con los filtros.
+        </p>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

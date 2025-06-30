@@ -1,0 +1,480 @@
+/* Importa una fuente de Google Fonts para un mejor aspecto */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: #007bff; /* Azul vibrante */
+  --secondary-color: #6c757d; /* Gris para texto secundario */
+  --accent-color: #28a745; /* Verde para acciones */
+  --background-light: #f8f9fa; /* Fondo claro */
+  --text-dark: #343a40; /* Texto oscuro */
+  --border-color: #dee2e6; /* Color de borde */
+  --card-background: #ffffff; /* Fondo de tarjeta */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.navbar .search-bar-header {
+  display: flex;
+  flex-grow: 1;
+  margin: 0 2rem;
+  max-width: 600px;
+}
+
+.navbar .search-bar-header input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1rem;
+}
+
+.navbar .search-bar-header button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .search-bar-header button:hover {
+  background-color: #218838; /* Un poco más oscuro */
+}
+
+.navbar .user-icons i {
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navbar .user-icons i:hover {
+  color: #e2e6ea;
+}
+
+/* --- Main Container --- */
+.main-container {
+  display: flex;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+/* --- Filter Panel (Aside) --- */
+.filter-panel {
+  flex: 0 0 280px; /* Ancho fijo para el panel de filtros */
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  height: fit-content; /* Se ajusta al contenido */
+  position: sticky; /* Se mantiene en su lugar al hacer scroll */
+  top: 1.5rem; /* Distancia desde la parte superior */
+}
+
+.filter-panel h2 {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.filter-panel h2 .fas {
+  margin-right: 0.8rem;
+  font-size: 1.3rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.filter-group h3 {
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.filter-group label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-group input[type="checkbox"],
+.filter-group input[type="radio"] {
+  margin-right: 0.8rem;
+  transform: scale(1.1); /* Hace los checkboxes un poco más grandes */
+}
+
+.filter-group input[type="text"],
+.filter-group select,
+.filter-group input[type="number"] {
+  /* Añadido input number */
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.filter-group .price-range {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.filter-group .price-range input {
+  width: calc(50% - 0.25rem); /* Ajusta el ancho para dos campos */
+  margin-bottom: 0;
+}
+
+.filter-group .price-range span {
+  font-weight: bold;
+}
+
+.filter-group .fa-star,
+.filter-group .fa-star-half-alt,
+.filter-group .far.fa-star {
+  color: #ffc107; /* Amarillo para estrellas */
+  margin-right: 2px;
+}
+
+.apply-filters-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.apply-filters-btn:hover {
+  background-color: #0056b3;
+}
+
+/* --- Results Area (Main) --- */
+.results-area {
+  flex: 1; /* Toma el espacio restante */
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-header h2 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.sort-by span {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.sort-by select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: white;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* Columnas responsivas */
+  gap: 1.5rem;
+}
+
+/* --- Store Card --- */
+.store-card {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinea los ítems a la izquierda */
+  transition: transform 0.2s ease-in-out;
+}
+
+.store-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilo para el nombre de la tienda en lugar de la imagen */
+.store-card .store-name-display {
+  width: 100%;
+  height: 120px; /* Misma altura que la imagen para mantener el layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(
+    --primary-color
+  ); /* Un color de fondo para el "logo" de texto */
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.5rem; /* Pequeño padding para textos largos */
+}
+
+.store-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.store-card p {
+  font-size: 0.95rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.store-card p .fas {
+  margin-right: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+.store-card .rating {
+  color: #ffc107; /* Amarillo para estrellas */
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.store-card .rating span {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.store-card .tags {
+  margin-top: 0.8rem;
+  margin-bottom: 1rem;
+  display: flex; /* Permite que los tags se alineen */
+  flex-wrap: wrap; /* En caso de muchos tags */
+  gap: 0.5rem; /* Espacio entre tags */
+}
+
+.store-card .tags span {
+  background-color: #e9ecef;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  white-space: nowrap; /* Evita que los tags se rompan en varias líneas */
+}
+
+.store-card .card-actions {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas más pequeñas */
+  gap: 0.75rem;
+  margin-top: auto; /* Empuja las acciones al final de la tarjeta */
+  width: 100%;
+  align-items: center;
+}
+
+.store-card .card-actions button {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.store-card .btn-details {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.store-card .btn-details:hover {
+  background-color: #0056b3;
+}
+
+.store-card .btn-directions {
+  background-color: #f0f0f0;
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+}
+
+.store-card .btn-directions:hover {
+  background-color: #e2e6ea;
+}
+
+.store-card .fav-icon,
+.store-card .share-icon {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  margin-left: auto; /* Empuja los iconos a la derecha */
+  transition: color 0.2s ease;
+}
+
+.store-card .fav-icon:hover {
+  color: #dc3545; /* Rojo para favorito */
+}
+
+.store-card .share-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .filter-panel {
+    flex: none; /* Elimina el ancho fijo */
+    width: 100%; /* Ocupa todo el ancho */
+    margin-bottom: 1.5rem;
+    position: static; /* No sticky en móvil */
+    top: auto;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+
+  .navbar .search-bar-header {
+    order: 3; /* Mueve la barra de búsqueda debajo */
+    width: 100%;
+    margin: 1rem 0 0;
+  }
+
+  .navbar .logo {
+    margin-right: auto;
+  }
+
+  .navbar .user-icons {
+    margin-left: auto;
+  }
+
+  .results-area {
+    padding: 0;
+  }
+
+  .store-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+
+  .results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar .logo {
+    font-size: 1.5rem;
+  }
+  .navbar .user-icons i {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+  }
+  .main-container {
+    padding: 0.5rem;
+  }
+  .filter-panel,
+  .store-card {
+    padding: 1rem;
+  }
+  .filter-panel h2 {
+    font-size: 1.4rem;
+  }
+  .filter-group h3 {
+    font-size: 1.1rem;
+  }
+  .store-card h3 {
+    font-size: 1.3rem;
+  }
+  .store-card .card-actions {
+    flex-direction: column; /* Apila los botones */
+    align-items: stretch;
+  }
+  .store-card .card-actions button {
+    width: 100%;
+  }
+  .store-card .fav-icon,
+  .store-card .share-icon {
+    margin-left: 0; /* Quita el margen automático */
+    margin-top: 0.5rem; /* Agrega espacio entre los botones apilados y los íconos */
+    width: fit-content; /* Ajusta el ancho para que los íconos no se estiren */
+  }
+  .store-card .card-actions {
+    position: relative; /* Para posicionar los iconos de favorito y compartir */
+  }
+  .store-card .fav-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+  .store-card .share-icon {
+    position: absolute;
+    top: 1rem;
+    right: 3.5rem; /* Ajusta la posición del icono de compartir */
+  }
+}
